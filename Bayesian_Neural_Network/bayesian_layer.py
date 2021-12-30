@@ -5,7 +5,7 @@ import gaussian.Gaussian
 
 class BayesianLinear(nn.Module):
     def __init__(self, in_features, out_features, prior_mu=0, prior_sigma=1):
-        ''' The paper uses a gaussian mixture as a prior each weight and bias.
+        ''' The paper uses a gaussian mixture as a prior for each weight and bias.
         This implementation uses as prior a single gaussian.        '''
         super().__init__()
         self.in_features = in_features
