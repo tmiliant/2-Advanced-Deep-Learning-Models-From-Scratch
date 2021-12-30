@@ -49,7 +49,7 @@ class BayesianNetwork(nn.Module):
         if self.output_transformation == identity:
             outputs = torch.tanh(outputs)
         
-        negative_log_likelihood = -torch.sum( torch.mean(torch.distributions.Normal(outputs, 
+        negative_log_likelihood = - torch.sum( torch.mean(torch.distributions.Normal(outputs, 
                                             self.likelihood_variance).log_prob(target).to(device), axis=0) )
 
         loss = kl / self.NUM_BATCHES + negative_log_likelihood
