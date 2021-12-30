@@ -24,6 +24,7 @@ class BayesianLinear(nn.Module):
         self.bias = Gaussian(self.bias_mu, self.bias_rho)
         
         # Define the parameters of the prior distribution of each individual weight and bias.
+        # The weights and biases are assumed independent - mean field assumption.
         self.prior_mu = prior_mu  
         self.prior_sigma = prior_sigma  
 
