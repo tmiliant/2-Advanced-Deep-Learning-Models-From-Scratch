@@ -2,6 +2,8 @@ import torch
 import torch.nn as nn
 import bayesian_linear.BayesianLinear
 
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
 class BayesianNetwork(nn.Module):
     def __init__(self, input_dim, output_dim, hidden_size=256, batch_size=256, 
             likelihood_variance=0.1, NUM_BATCHES=1):
